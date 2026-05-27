@@ -1,257 +1,206 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3ece3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .iphone-frame {
+            position: relative;
+            width: 375px;
+            height: 760px;
+            background: #1c1c1e;
+            border: 12px solid #3a3a3c;
+            border-radius: 45px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .dynamic-island {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 30px;
+            background: black;
+            border-radius: 20px;
+            z-index: 100;
+        }
+        .home-bar {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            z-index: 100;
+        }
+        .screen-slider {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 25px 40px 25px;
+            text-align: center;
+            color: #333;
+        }
+        h1 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #b8860b; }
+        h2 { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: #b8860b; }
+        h3 { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        p { font-size: 0.95rem; line-height: 1.6; color: #555; }
+        #page1 {
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000') no-repeat center center/cover;
+        }
+        .couple-names { margin-top: auto; margin-bottom: auto; }
+        #page2 { background-color: #fffdf9; justify-content: center; gap: 30px;}
+        .event-details {
+            background: #fdfaf2;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #ebdcb9;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .map-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 18px;
+            background: #b8860b;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        #page3 { background-color: #faf6f0; justify-content: center; gap: 40px;}
+        .invited-by-list { font-size: 1.1rem; font-weight: 600; color: #444; line-height: 2; }
+        .nav-controls {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 99;
+        }
+        .nav-btn {
+            background: rgba(184, 134, 11, 0.2);
+            border: 1px solid #b8860b;
+            color: #b8860b;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .nav-btn:hover { background: #b8860b; color: white; }
+        .hidden { visibility: hidden; }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Wedding Invitation&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Elegant Typography --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Base Setup */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Montserrat', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f3ece3;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 📱 Realistic iPhone Frame Container */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.iphone-frame {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 375px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 760px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #1c1c1e;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 12px solid #3a3a3c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 45px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Dynamic Island / Camera Notch */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.dynamic-island {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 110px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: black;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Home Indicator Bar at the bottom */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.home-bar {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 140px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.8);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 📑 Slide Container (The Screen Content) */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.screen-slider {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 300%; /* 3 Pages = 300% width */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.5s ease-in-out;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Individual Pages */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.page {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 60px 25px 40px 25px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Fonts Styling */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #b8860b; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: #b8860b; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h3 { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>p { font-size: 0.95rem; line-height: 1.6; color: #555; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 🖼️ PAGE 1: Welcome / Cover */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#page1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>/* Replace with your brother's image link */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&amp;w=1000') no-repeat center center/cover;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.couple-names { margin-top: auto; margin-bottom: auto; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 📍 PAGE 2: Venue Details */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#page2 { background-color: #fffdf9; justify-content: center; gap: 30px;}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.event-details {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fdfaf2;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ebdcb9;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 10px rgba(0,0,0,0.02);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.map-btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #b8860b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 👥 PAGE 3: Invited By */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#page3 { background-color: #faf6f0; justify-content: center; gap: 40px;}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.invited-by-list { font-size: 1.1rem; font-weight: 600; color: #444; line-height: 2; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 🔘 Navigation Buttons */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-controls {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 99;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(184, 134, 11, 0.2);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #b8860b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b8860b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-btn:hover { background: #b8860b; color: white; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hidden { visibility: hidden; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- The iPhone Container Frame --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="iphone-frame"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="dynamic-island"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="home-bar"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- The Swiping Screens --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="screen-slider" id="slider"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- PAGE 1: Names and Images --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="page" id="page1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Save The Date&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="couple-names"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1&gt;Groom Name&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p style="font-size: 1.5rem; margin: 10px 0;"&gt;&amp;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1&gt;Bride Name&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Are getting married on&lt;br&gt;&lt;strong&gt;December 12, 2026&lt;/strong&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- PAGE 2: Wedding Venue Details --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="page" id="page2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;Wedding Details&lt;/h2&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="event-details"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;The Ceremony&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Time:&lt;/strong&gt; 10:30 AM onwards&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; Grand Palace, Hall A&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com" target="_blank" class="map-btn"&gt;📍 Google Maps&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="event-details"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;The Reception&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Time:&lt;/strong&gt; 07:00 PM onwards&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Venue:&lt;/strong&gt; Grand Palace, Main Lawns&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com" target="_blank" class="map-btn"&gt;📍 Google Maps&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- PAGE 3: Invited By --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="page" id="page3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;Warm Invitation From&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;We await your presence to bless the beautiful couple on their new journey.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="invited-by-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Family Name Here&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Friends &amp; Relatives&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Near &amp; Dear Ones&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="font-style: italic; color: #888;"&gt;#GroomWedsBride&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Bottom Navigation buttons inside the phone screen --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="nav-controls"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="nav-btn hidden" id="prevBtn" onclick="moveSlide(-1)"&gt;◀ Swipe Back&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="nav-btn" id="nextBtn" onclick="moveSlide(1)"&gt;Next Page ▶&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Script to transition between pages --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let currentSlide = 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const totalSlides = 3;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const slider = document.getElementById('slider');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const prevBtn = document.getElementById('prevBtn');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const nextBtn = document.getElementById('nextBtn');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function moveSlide(direction) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>currentSlide += direction;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Constrain slide movement</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (currentSlide &lt; 0) currentSlide = 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (currentSlide &gt;= totalSlides) currentSlide = totalSlides - 1;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Perform translation effect</p>
-<p class="p1"><span class="Apple-converted-space">            </span>slider.style.transform = `translateX(-${currentSlide * 100}%)`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Handle button visibility</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (currentSlide === 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>prevBtn.classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>prevBtn.classList.remove('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (currentSlide === totalSlides - 1) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>nextBtn.classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>nextBtn.classList.remove('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="home-bar"></div>
+
+        <div class="screen-slider" id="slider">
+            
+            <div class="page" id="page1">
+                <h3>Save The Date</h3>
+                <div class="couple-names">
+                    <h1>Rithesh</h1>
+                    <p style="font-size: 1.5rem; margin: 10px 0;">&</p>
+                    <h1>Himaja</h1>
+                </div>
+                <p>Are getting married on<br><strong>December 12, 2026</strong></p>
+            </div>
+
+            <div class="page" id="page2">
+                <h2>Wedding Details</h2>
+                
+                <div class="event-details">
+                    <h3>The Ceremony</h3>
+                    <p><strong>Time:</strong> 10:30 AM onwards</p>
+                    <p><strong>Venue:</strong> Grand Palace, Hall A</p>
+                    <a href="https://maps.google.com" target="_blank" class="map-btn">📍 Google Maps</a>
+                </div>
+
+                <div class="event-details">
+                    <h3>The Reception</h3>
+                    <p><strong>Time:</strong> 07:00 PM onwards</p>
+                    <p><strong>Venue:</strong> Grand Palace, Main Lawns</p>
+                    <a href="https://maps.google.com" target="_blank" class="map-btn">📍 Google Maps</a>
+                </div>
+            </div>
+
+            <div class="page" id="page3">
+                <h2>Warm Invitation From</h2>
+                <p>We await your presence to bless the beautiful couple on their new journey.</p>
+                
+                <div class="invited-by-list">
+                    <p>Shivuni Family</p>
+                    <p>Friends & Relatives</p>
+                    <p>Near & Dear Ones</p>
+                </div>
+                
+                <p style="font-style: italic; color: #888;">#RitheshWedsHimaja</p>
+            </div>
+
+        </div>
+
+        <div class="nav-controls">
+            <button class="nav-btn hidden" id="prevBtn" onclick="moveSlide(-1)">◀ Swipe Back</button>
+            <button class="nav-btn" id="nextBtn" onclick="moveSlide(1)">Next Page ▶</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            if (currentSlide === 0) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.classList.add('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
