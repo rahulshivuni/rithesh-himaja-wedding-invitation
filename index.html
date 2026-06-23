@@ -1,622 +1,405 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wedding Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
+<title>Rithesh & Himaja | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Noto+Serif+Devanagari:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+    --bg: #fdf6eb;
+    --card: #fffdf8;
+    --gold: #c19a3a;
+    --gold-dark: #9a7424;
+    --maroon: #8b2d4a;
+    --maroon-deep: #6d2238;
+    --saffron: #e07a1a;
+    --ink: #3a1f12;
+    --muted: #6b5344;
+    --line: #e8d4b8;
+}
+
 body {
-
-font-family: 'Montserrat', sans-serif;
-
-background-color: #f3ece3;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-min-height: 100vh;
-
-overflow-x: hidden;
-
+    font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(224, 122, 26, 0.08), transparent 42%),
+        linear-gradient(180deg, #fff9f0 0%, #f7ead8 100%);
+    color: var(--ink);
 }
 
-
-/* 📱 Fixed iPhone Container */
-
-.iphone-frame {
-
-position: relative;
-
-width: 375px;
-
-height: 760px;
-
-background: #1c1c1e;
-
-border: 12px solid #3a3a3c;
-
-border-radius: 45px;
-
-box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-
-overflow: hidden;
-
+.container {
+    width: min(860px, 92vw);
+    margin: 0 auto;
+    padding: 28px 0 46px;
 }
 
-.dynamic-island {
-
-position: absolute;
-
-top: 12px;
-
-left: 50%;
-
-transform: translateX(-50%);
-
-width: 110px;
-
-height: 30px;
-
-background: black;
-
-border-radius: 20px;
-
-z-index: 100;
-
+.section {
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(234, 220, 196, 0.92);
+    border-radius: 22px;
+    box-shadow: 0 10px 32px rgba(77, 52, 21, 0.08);
+    overflow: hidden;
 }
 
-.home-bar {
-
-position: absolute;
-
-bottom: 8px;
-
-left: 50%;
-
-transform: translateX(-50%);
-
-width: 140px;
-
-height: 5px;
-
-background: rgba(255, 255, 255, 0.8);
-
-border-radius: 10px;
-
-z-index: 100;
-
+.section.hero {
+    overflow: visible;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-
-
-/* 📑 Slider Engine */
-
-.screen-slider {
-
-display: flex;
-
-width: 300%;
-
-height: 100%;
-
-transition: transform 0.5s ease-in-out;
-
+.hero {
+    position: relative;
+    min-height: 80vh;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 32px;
 }
 
-
-/* Each page fills exactly 100% of the internal phone height */
-
-.page {
-
-width: 100%;
-
-height: 100%;
-
-display: flex;
-
-flex-direction: column;
-
-justify-content: center; /* Centers elements vertically */
-
-align-items: center;
-
-padding: 60px 25px 100px 25px; /* Added massive bottom padding to avoid button overlap */
-
-text-align: center;
-
-color: #333;
-
+.hero-3d-scene {
+    width: 100%;
+    perspective: 1400px;
+    perspective-origin: center center;
 }
 
-
-h1 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #b8860b; }
-
-h2 { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: #b8860b; margin-bottom: 20px; }
-
-h3 { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-
-p { font-size: 0.95rem; line-height: 1.6; color: #555; }
-
-
-/* Page Styling Details */
-
-#page1 {
-
-position: relative;
-
-overflow: hidden;
-
-justify-content: space-between; /* Keeps top and bottom content spread beautifully */
-
+.hero-3d-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(4deg) rotateY(-6deg);
+    transition: transform 0.15s ease-out;
+    border-radius: 22px;
+    box-shadow:
+        0 40px 80px rgba(60, 30, 10, 0.28),
+        0 16px 32px rgba(60, 30, 10, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    will-change: transform;
 }
 
-.couple-names { margin-top: auto; margin-bottom: auto; }
-
-.split-image-container {
-
-position: absolute;
-
-top: 0;
-
-left: 0;
-
-width: 100%;
-
-height: 100%;
-
-display: flex;
-
-z-index: 1;
-
+.hero-3d-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    transform: translateZ(-18px) scale(0.98);
+    background: linear-gradient(145deg, #d4b896, #a07850);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: -1;
 }
 
-.half-pic {
-
-width: 50%;
-
-height: 100%;
-
-overflow: hidden;
-
+.hero-theme {
+    position: relative;
+    width: 100%;
+    min-height: 76vh;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 22px;
+    transform-style: preserve-3d;
+    transform: translateZ(12px);
 }
 
-.half-pic img {
-
-width: 100%;
-
-height: 100%;
-
-display: block;
-
-object-fit: cover;
-
-transform-origin: center top;
-
+.hero-bg {
+    width: 100%;
+    height: 76vh;
+    display: block;
+    object-fit: cover;
+    object-position: center 28%;
+    filter: saturate(1.1) brightness(1.08);
+    transform: translateZ(1px);
 }
 
-.groom-side img {
-
-object-position: 50% 10%;
-
-transform: scale(1.08);
-
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding: 0 18px 34px;
+    pointer-events: none;
+    background: transparent;
+    transform: translateZ(48px);
+    transform-style: preserve-3d;
 }
 
-.bride-side img {
-
-object-position: 50% 10%;
-
-transform: scale(1.08);
-
+.hero-card {
+    width: min(560px, 92%);
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    transform: translateZ(24px);
 }
 
-.page1-content {
-
-position: relative;
-
-z-index: 2;
-
-width: 100%;
-
-height: 100%;
-
-display: flex;
-
-flex-direction: column;
-
-justify-content: center;
-
-align-items: center;
-
-padding: 60px 25px 100px 25px;
-
-background: linear-gradient(90deg, rgba(24, 28, 36, 0.08), rgba(24, 28, 36, 0.08));
-
+.couple-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.2rem, 8vw, 4.8rem);
+    line-height: 0.92;
+    color: var(--maroon);
+    text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.95),
+        0 2px 10px rgba(255, 255, 255, 0.75),
+        0 8px 20px rgba(60, 30, 10, 0.15);
+    transform: translateZ(32px);
 }
 
-.hero-text-card {
-
-width: 100%;
-
-max-width: 292px;
-
-padding: 24px 22px;
-
-background: transparent;
-
-border: none;
-
-border-radius: 0;
-
-backdrop-filter: none;
-
-box-shadow: none;
-
+.hero-date {
+    display: block;
+    margin-top: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 3vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--maroon-deep);
+    text-shadow:
+        0 0 16px rgba(255, 255, 255, 0.95),
+        0 1px 8px rgba(255, 255, 255, 0.7),
+        0 6px 16px rgba(60, 30, 10, 0.12);
+    transform: translateZ(28px);
 }
 
-.save-date {
-
-font-size: 1.15rem;
-
-letter-spacing: 4px;
-
-text-transform: uppercase;
-
-font-weight: 700;
-
-color: #ffffff;
-
-text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-
-margin-bottom: 18px;
-
+.content-block {
+    padding: 40px 28px;
+    text-align: center;
 }
 
-#page1 .couple-names {
-
-margin-top: 0;
-
-margin-bottom: 0;
-
+.section-kicker {
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-#page1 .couple-names h1 {
-
-font-size: 4rem;
-
-line-height: 1;
-
-color: #ffffff;
-
-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.48), 0 0 2px rgba(0, 0, 0, 0.5);
-
+.section-title {
+    margin-top: 8px;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
+    color: var(--maroon);
 }
 
-.ampersand {
-
-font-size: 2rem;
-
-font-weight: 600;
-
-color: #ffffff;
-
-text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-
-line-height: 1.1;
-
-margin: 8px 0;
-
+.section-subtitle {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
 }
 
-.wedding-date {
-
-margin-top: 20px;
-
-font-size: 1.92rem;
-
-color: #ffffff;
-
-text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-
-font-weight: 500;
-
+.grid-2 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
 }
 
-.wedding-date strong {
-
-font-weight: 700;
-
-color: #ffffff;
-
+.card {
+    background: linear-gradient(180deg, #fff 0%, #fcf7ef 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-align: left;
 }
 
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    color: var(--maroon);
+    margin-bottom: 8px;
+}
 
-#page2 { background-color: #fffdf9; gap: 15px; }
-
-.event-details {
-
-background: #fdfaf2;
-
-padding: 15px;
-
-border-radius: 15px;
-
-border: 1px solid #ebdcb9;
-
-width: 100%;
-
-box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-
+.card p {
+    color: #414957;
+    font-size: 0.92rem;
+    line-height: 1.62;
 }
 
 .map-btn {
-
-display: inline-block;
-
-margin-top: 8px;
-
-padding: 6px 15px;
-
-background: #b8860b;
-
-color: white;
-
-text-decoration: none;
-
-border-radius: 20px;
-
-font-size: 0.8rem;
-
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
 }
 
+.map-btn:hover { background: var(--gold-dark); }
 
-#page3 { background-color: #faf6f0; gap: 20px; }
-
-.invited-by-list { font-size: 1.1rem; font-weight: 600; color: #444; line-height: 2; }
-
-
-/* 🔘 Navigation Buttons Container */
-
-.nav-controls {
-
-position: absolute;
-
-bottom: 35px; /* Kept safely below main screen components */
-
-width: 100%;
-
-display: flex;
-
-justify-content: space-between;
-
-padding: 0 25px;
-
-z-index: 99;
-
+.invite-card {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
 }
 
-.nav-btn {
-
-background: #b8860b;
-
-border: none;
-
-color: white;
-
-padding: 10px 18px;
-
-border-radius: 25px;
-
-cursor: pointer;
-
-font-weight: bold;
-
-font-size: 0.85rem;
-
-box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-
-transition: 0.3s;
-
+.invite-card p {
+    color: #444c5b;
+    line-height: 1.7;
+    font-size: 0.94rem;
 }
 
-.nav-btn:hover { background: #966f0a; }
+.family-list {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #37404f;
+    line-height: 1.85;
+}
 
-.hidden { visibility: hidden; }
+.hash {
+    margin-top: 14px;
+    color: #7a6952;
+    font-style: italic;
+    font-size: 0.9rem;
+}
 
+@media (max-width: 700px) {
+    .container { width: 95vw; padding: 12px 0 26px; }
+    .hero { min-height: 72vh; padding: 16px 0 24px; }
+    .hero-3d-card { transform: rotateX(3deg) rotateY(-3deg); }
+    .hero-theme { min-height: 70vh; }
+    .hero-bg { height: 70vh; object-position: center 32%; }
+    .hero-content { padding: 22px 14px 28px; }
+    .content-block { padding: 28px 16px; }
+    .grid-2 { grid-template-columns: 1fr; }
+}
 </style>
-
 </head>
-
 <body>
-
-
-
-<div class="iphone-frame">
-
-<div class="dynamic-island"></div>
-
-<div class="home-bar"></div>
-
-
-
-<div class="screen-slider" id="slider">
-
-
-<div class="page" id="page1">
-
-<div class="split-image-container">
-
-<div class="half-pic groom-side">
-
-<img src="groom.jpg" alt="Groom portrait">
-
-</div>
-
-<div class="half-pic bride-side">
-
-<img src="bride.jpg" alt="Bride portrait">
-
-</div>
-
-</div>
-
-<div class="page1-content">
-
-<div class="hero-text-card">
-
-<h3 class="save-date">Save The Date</h3>
-
-<div class="couple-names">
-
-<h1>Rithesh</h1>
-
-<p class="ampersand">&</p>
-
-<h1>Himaja</h1>
-
-</div>
-
-<p class="wedding-date">Are getting married on<br><strong>JULY 04 | 2026</strong></p>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="page" id="page2">
-
-<h2>Wedding Details</h2>
-
-
-<div class="event-details">
-
-<h3>The Ceremony</h3>
-
-<p><strong>Time:</strong> 11:05 AM onwards</p>
-
-<p><strong>Venue:</strong> G Convention, Dichpally, Nizamabad</p>
-
-<a href="https://www.google.com/maps/place/?q=place_id:ChIJ-_lS-RLPzTsREcCDlIZkRMw" target="_blank" class="map-btn">📍 Google Maps</a>
-
-</div>
-
-</div>
-
-
-
-<div class="page" id="page3">
-
-<h2>Warm Invitation From</h2>
-
-<p>We await your presence to bless the beautiful couple on their new journey.</p>
-
-
-<div class="invited-by-list">
-
-<p>Shivuni Family</p>
-
-<p>Friends & Relatives</p>
-
-<p>Near & Dear Ones</p>
-
-</div>
-
-
-<p style="font-style: italic; color: #888;">#RitheshWedsHimaja</p>
-
-</div>
-
-
-
-</div>
-
-
-
-<div class="nav-controls">
-
-<button class="nav-btn hidden" id="prevBtn" onclick="moveSlide(-1)">◀ Back</button>
-
-<button class="nav-btn" id="nextBtn" onclick="moveSlide(1)">Next Page ▶</button>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-let currentSlide = 0;
-
-const totalSlides = 3;
-
-const slider = document.getElementById('slider');
-
-const prevBtn = document.getElementById('prevBtn');
-
-const nextBtn = document.getElementById('nextBtn');
-
-
-
-function moveSlide(direction) {
-
-currentSlide += direction;
-
-if (currentSlide < 0) currentSlide = 0;
-
-if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
-
-
-
-// Moves the layout side-to-side perfectly matching frame widths
-
-slider.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
-
-
-
-if (currentSlide === 0) {
-
-prevBtn.classList.add('hidden');
-
-} else {
-
-prevBtn.classList.remove('hidden');
-
-}
-
-
-
-if (currentSlide === totalSlides - 1) {
-
-nextBtn.classList.add('hidden');
-
-} else {
-
-nextBtn.classList.remove('hidden');
-
-}
-
-}
-
-</script>
-
+    <main class="container">
+        <section class="section hero">
+            <div class="hero-3d-scene">
+                <div class="hero-3d-card" id="hero3d">
+                    <div class="hero-theme">
+                        <img
+                            class="hero-bg"
+                            src="couple.jpg"
+                            alt="Rithesh and Himaja">
+                        <div class="hero-content">
+                            <div class="hero-card">
+                                <h1 class="couple-name">Rithesh</h1>
+                                <h1 class="couple-name">Himaja</h1>
+                            </div>
+                            <p class="hero-date">JULY 04 | 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content-block">
+                <p class="section-kicker">Mark Your Calendar</p>
+                <h2 class="section-title">The Celebrations</h2>
+                <p class="section-subtitle">Celebrate with us as two hearts begin their forever journey.</p>
+
+                <div class="grid-2">
+                    <article class="card">
+                        <h3>Haldi</h3>
+                        <p><strong>Date:</strong> June 30, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                    </article>
+                    <article class="card">
+                        <h3>Live Band — Tara Live</h3>
+                        <p><strong>Date:</strong> June 30, 2026</p>
+                        <p><strong>Time:</strong> 5:00 PM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                    </article>
+                    <article class="card">
+                        <h3>Sangeet</h3>
+                        <p><strong>Date:</strong> June 30, 2026</p>
+                        <p><strong>Time:</strong> 8:00 PM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                    </article>
+                    <article class="card">
+                        <h3>Pasupula Muhurtham</h3>
+                        <p><strong>Date:</strong> July 2, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Venue:</strong> Home, Mahalaxmi Nagar</p>
+                    </article>
+                    <article class="card">
+                        <h3>Pochama Panduga</h3>
+                        <p><strong>Date:</strong> July 3, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Venue:</strong> Home, Mahalaxmi Nagar</p>
+                    </article>
+                    <article class="card">
+                        <h3>Marriage</h3>
+                        <p><strong>Date:</strong> July 4, 2026</p>
+                        <p><strong>Time:</strong> 11:05 AM</p>
+                        <p><strong>Venue:</strong> G-Convention</p>
+                        <a href="https://www.google.com/maps/place/?q=place_id:ChIJ-_lS-RLPzTsREcCDlIZkRMw" target="_blank" class="map-btn">View on Map</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content-block">
+                <p class="section-kicker">You Are Cordially Invited</p>
+                <h2 class="section-title">With Joy In Our Hearts</h2>
+                <div class="invite-card">
+                    <p>
+                        With immense love and warm blessings, we invite you to grace this special day and witness the sacred union of two hearts.
+                        Your presence, laughter, and blessings will make our celebration truly unforgettable.
+                    </p>
+                    <div class="family-list">
+                        <p>Shivuni Family</p>
+                        <p>Friends & Relatives</p>
+                        <p>Near & Dear Ones</p>
+                    </div>
+                </div>
+                <p class="hash">#RitheshWedsHimaja</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function () {
+        const card = document.getElementById('hero3d');
+        if (!card) return;
+
+        const baseRotateX = 4;
+        const baseRotateY = -6;
+        const maxTilt = 10;
+
+        function setTilt(x, y) {
+            card.style.transform =
+                'rotateX(' + (baseRotateX + x) + 'deg) rotateY(' + (baseRotateY + y) + 'deg)';
+        }
+
+        card.addEventListener('mousemove', function (event) {
+            const rect = card.getBoundingClientRect();
+            const xRatio = (event.clientX - rect.left) / rect.width - 0.5;
+            const yRatio = (event.clientY - rect.top) / rect.height - 0.5;
+            setTilt(-yRatio * maxTilt, xRatio * maxTilt);
+        });
+
+        card.addEventListener('mouseleave', function () {
+            setTilt(0, 0);
+        });
+
+        card.addEventListener('touchmove', function (event) {
+            if (!event.touches.length) return;
+            const touch = event.touches[0];
+            const rect = card.getBoundingClientRect();
+            const xRatio = (touch.clientX - rect.left) / rect.width - 0.5;
+            const yRatio = (touch.clientY - rect.top) / rect.height - 0.5;
+            setTilt(-yRatio * (maxTilt * 0.7), xRatio * (maxTilt * 0.7));
+        }, { passive: true });
+
+        card.addEventListener('touchend', function () {
+            setTilt(0, 0);
+        });
+    })();
+    </script>
 </body>
-
 </html>
